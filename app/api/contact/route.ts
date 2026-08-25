@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 // TODO: Replace CONTACT_EMAIL with Rhett's real email address
 // Set CONTACT_EMAIL env var in Vercel, or replace the default here.
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL ?? "rhett@rhettmcbrayer.com";
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL ?? "rhettmcbrayer@gmail.com";
 
 export async function POST(req: NextRequest) {
   try {
