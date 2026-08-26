@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function Home() {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,15 +31,57 @@ export default function Home() {
   return (
     <>
       {/* ── NAV ───────────────────────────────────────────────────── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black/60 backdrop-blur-md border-b border-white/10">
-        <span className="text-lg font-bold tracking-widest uppercase text-amber-400">
-          Rhett McBrayer
-        </span>
-        <div className="flex gap-6 text-sm font-medium tracking-wide text-zinc-300">
-          <a href="#about" className="hover:text-white transition-colors">About</a>
-          <a href="#gallery" className="hover:text-white transition-colors">Gallery</a>
-          <a href="#shows" className="hover:text-white transition-colors">Shows</a>
-          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10">
+        <div className="flex items-center justify-between px-6 py-4">
+          <span className="text-lg font-bold tracking-widest uppercase text-amber-400">
+            Rhett McBrayer
+          </span>
+
+          {/* Desktop links */}
+          <div className="hidden md:flex gap-6 text-sm font-medium tracking-wide text-zinc-300">
+            <a href="#about" className="hover:text-white transition-colors">About</a>
+            <a href="#gallery" className="hover:text-white transition-colors">Gallery</a>
+            <a href="#shows" className="hover:text-white transition-colors">Shows</a>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+          </div>
+
+          {/* Hamburger button — mobile only */}
+          <button
+            className="md:hidden flex flex-col justify-center gap-1.5 p-2 -mr-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+          >
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${
+                menuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                menuOpen ? "opacity-0 scale-x-0" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${
+                menuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
+          </button>
+        </div>
+
+        {/* Mobile dropdown */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            menuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="flex flex-col px-6 pb-5 pt-1 gap-5 text-sm font-medium tracking-wide text-zinc-300 border-t border-white/10">
+            <a href="#about"   onClick={() => setMenuOpen(false)} className="hover:text-white transition-colors">About</a>
+            <a href="#gallery" onClick={() => setMenuOpen(false)} className="hover:text-white transition-colors">Gallery</a>
+            <a href="#shows"   onClick={() => setMenuOpen(false)} className="hover:text-white transition-colors">Shows</a>
+            <a href="#contact" onClick={() => setMenuOpen(false)} className="hover:text-white transition-colors">Contact</a>
+          </div>
         </div>
       </nav>
 
