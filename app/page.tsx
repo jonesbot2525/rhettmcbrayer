@@ -182,10 +182,10 @@ export default function Home() {
               <Image src="/images/gig-2.jpg" alt="Rhett McBrayer on stage" fill className="object-cover object-top hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="relative h-72 sm:h-80 rounded-xl overflow-hidden">
-              <Image src="/images/gig-3.jpg" alt="Rhett McBrayer performing" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+              <Image src="/images/gig-3.jpg" alt="Rhett McBrayer performing" fill className="object-cover object-bottom hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="relative h-72 sm:h-80 rounded-xl overflow-hidden">
-              <Image src="/images/gig-4.jpg" alt="Rhett McBrayer guitar close-up" fill className="object-cover object-top hover:scale-105 transition-transform duration-500" />
+              <Image src="/images/gig-4.jpg" alt="Rhett McBrayer guitar close-up" fill className="object-cover object-bottom hover:scale-105 transition-transform duration-500" />
             </div>
           </div>
         </div>
