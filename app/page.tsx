@@ -12,12 +12,19 @@ export default function Home() {
     e.preventDefault();
     setFormStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "9195c497-7c84-430e-94fe-c09c701f1bb6",
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: `New message from ${form.name} via rhettmcbrayer.com`,
+        }),
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         setFormStatus("sent");
         setForm({ name: "", email: "", message: "" });
       } else {
