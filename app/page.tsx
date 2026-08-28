@@ -140,7 +140,7 @@ export default function Home() {
             <div className="space-y-4 text-zinc-300 text-base leading-relaxed">
               <p>
                 Rhett McBrayer is a guitarist and vocalist who brings raw energy and
-                heart to every stage. Whether he's leading The Stews through a packed
+                heart to every stage. Whether he's leading The Banqs through a packed
                 outdoor set or performing solo, Rhett's sound is immediately his own —
                 warm, live, and always in the moment.
               </p>
