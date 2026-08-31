@@ -187,6 +187,9 @@ export default function Home() {
             <div className="relative h-72 sm:h-80 rounded-xl overflow-hidden">
               <Image src="/images/gig-4.jpg" alt="Rhett McBrayer guitar close-up" fill className="object-cover object-[center_30%] hover:scale-105 transition-transform duration-500" />
             </div>
+            <div className="relative h-72 sm:h-96 rounded-xl overflow-hidden sm:col-span-2">
+              <Image src="/images/gig-5.jpg" alt="The Banqs performing live" fill className="object-cover object-center hover:scale-105 transition-transform duration-500" />
+            </div>
           </div>
         </div>
       </section>
