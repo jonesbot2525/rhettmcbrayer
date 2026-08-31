@@ -45,11 +45,24 @@ export default function Home() {
           </span>
 
           {/* Desktop links */}
-          <div className="hidden md:flex gap-6 text-sm font-medium tracking-wide text-zinc-300">
+          <div className="hidden md:flex items-center gap-6 text-sm font-medium tracking-wide text-zinc-300">
             <a href="#about" className="hover:text-white transition-colors">About</a>
             <a href="#gallery" className="hover:text-white transition-colors">Gallery</a>
             <a href="#shows" className="hover:text-white transition-colors">Shows</a>
             <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+            <a
+              href="https://www.instagram.com/rhettmcbrayer"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Rhett McBrayer on Instagram"
+              className="text-zinc-400 hover:text-amber-400 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
           </div>
 
           {/* Hamburger button — mobile only */}
@@ -88,6 +101,19 @@ export default function Home() {
             <a href="#gallery" onClick={() => setMenuOpen(false)} className="hover:text-white transition-colors">Gallery</a>
             <a href="#shows"   onClick={() => setMenuOpen(false)} className="hover:text-white transition-colors">Shows</a>
             <a href="#contact" onClick={() => setMenuOpen(false)} className="hover:text-white transition-colors">Contact</a>
+            <a
+              href="https://www.instagram.com/rhettmcbrayer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-amber-400 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+              Instagram
+            </a>
           </div>
         </div>
       </nav>
@@ -299,7 +325,22 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────────── */}
-      <footer className="py-8 text-center text-zinc-600 text-sm border-t border-white/5">
+      <footer className="py-10 text-center text-zinc-600 text-sm border-t border-white/5">
+        <div className="flex justify-center mb-5">
+          <a
+            href="https://www.instagram.com/rhettmcbrayer"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Rhett McBrayer on Instagram"
+            className="text-zinc-500 hover:text-amber-400 transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
         <p>© {new Date().getFullYear()} Rhett McBrayer. All rights reserved.</p>
       </footer>
     </>
